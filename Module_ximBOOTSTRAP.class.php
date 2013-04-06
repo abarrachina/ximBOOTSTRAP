@@ -62,7 +62,7 @@ class Module_ximBOOTSTRAP extends Module {
 		// Uninstall logic.
 
         // get destructor SQL
-		$this->loadDestructorSQL("ximBOOTSTRAP.destructor.sql");
+		$this->loadDestructorSQL("ximBOOTSTRAP.destruct.sql");
 
         // Uninstall !
 		parent::uninstall();

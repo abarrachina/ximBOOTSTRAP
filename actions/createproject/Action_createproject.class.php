@@ -62,7 +62,7 @@ class Action_createproject extends ActionAbstract {
         //Creating project
         $nodeID = $this->request->getParam("nodeid");
         $name = $this->request->getParam("name");
-
+        $this->name = $name;
         $nodeType = $this->GetTypeOfNewNode($nodeID);
         $nodeTypeName = $nodeType["name"];
 
@@ -401,6 +401,7 @@ class Action_createproject extends ActionAbstract {
                 $docxapContent = $newNode->GetContent();
                 $urlPath = Config::GetValue("UrlRoot");
                 $docxapContent = str_replace("{URL_PATH}", $urlPath, $docxapContent);
+                $docxapContent = str_replace("{PROJECT_NAME}", $this->name, $docxapContent);
                 $newNode->SetContent($docxapContent);
 
             }
